@@ -1,8 +1,22 @@
 namespace Aggregation
 {
-    //TODO: Define public class "LongDeposit" that inherits from "Deposit".
-    
-    //TODO: Define constructor that calls constructor of a base class.
-    
-    //TODO: Override method "Income" of base class according to the task. 
+    public class LongDeposit : Deposit
+    {
+        public LongDeposit(decimal amount, int period) : base(amount, period)
+        {
+        }
+
+        public override decimal Income()
+        {
+            var baseAmount = Amount;
+            const decimal interest = 0.15M;
+
+            for (int i = 6; i < Period; i++)
+            {
+                baseAmount += baseAmount * interest;
+            }
+
+            return baseAmount - Amount;
+        }
+    }
 }

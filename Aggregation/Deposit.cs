@@ -1,12 +1,17 @@
 namespace Aggregation
 {
-    //TODO: Define public abstract class "Deposit"
+    public abstract class Deposit
+    {
+        public decimal Amount { get; }
+        public int Period { get; }
 
-    //TODO: Define public readonly property "Amount" with decimal type.
+        public Deposit(decimal amount, int period)
+        {
+            this.Amount = amount;
+            this.Period = period;
+        }
 
-    //TODO: Define public readonly property "Period" with int type.
+        public abstract decimal Income();
 
-    //TODO: Define constructor that gets "Amount" and "Period" and assigns them to its properties.
-
-    //TODO: Define public abstract method "Income" that returns deposit profit depending on "Amount" and "Period".
+    }
 }
